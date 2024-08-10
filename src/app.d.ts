@@ -3,7 +3,10 @@
 declare global {
 	namespace App {
 		// interface Error {}
-		// interface Locals {}
+		interface Locals {
+			user?: UserPayload;
+			isAuthenticated?: boolean; // Füge das `isAuthenticated`-Flag hinzu
+		}
 		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--font-family: 'roboto', sans-serif;
+}
+
+html,
+body {
+	@apply h-full w-full m-0 p-0 bg-white dark:bg-[#23242a];
+	font-family: var(--font-family);
+}
