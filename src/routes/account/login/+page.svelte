@@ -14,7 +14,7 @@
 				return async ({ result }) => {
 					// `result` is an `ActionResult` object
 					if (result.status === 200) {
-						goto('/profile');
+						goto('/account/profile');
 					} else {
 						await applyAction(result);
 					}

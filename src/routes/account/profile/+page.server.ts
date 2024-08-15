@@ -7,7 +7,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 	// Überprüfen, ob der Benutzer eingeloggt ist
     console.log("profile locals",locals)
 	if (locals.isAuthenticated === false) {
-		throw redirect(302, '/login');
+		throw redirect(302, '/account/login');
 	}
 
 	// Benutzer aus der Datenbank abrufen
@@ -29,6 +29,6 @@ export const actions: Actions = {
         cookies.delete('session', { path: '/' });
 
         // Benutzer auf die Login-Seite weiterleiten
-        throw redirect(302, '/login');
+        throw redirect(302, '/account/login');
     }
 };

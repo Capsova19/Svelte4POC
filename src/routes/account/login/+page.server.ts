@@ -5,14 +5,13 @@ import { fail, redirect } from '@sveltejs/kit';
 import type { Actions } from './$types';
 import { env } from '$env/dynamic/private';
 
-// Dein geheimer Schlüssel für JWT
-const JWT_SECRET = env.SECRET_JWTKEY; // Verwende eine sichere Umgebungsvariable für den geheimen Schlüssel
+const JWT_SECRET = env.SECRET_JWTKEY;
 
 export const load = async ({ cookies }) => {
 	// Lösche das Session-Cookie, wenn die Login-Seite aufgerufen wird
 	cookies.delete('session', { path: '/' });
 
-	return {}; // Lade die Login-Seite wie gewohnt
+	return {}; // Lade die Login-Seite
 };
 
 export const actions: Actions = {

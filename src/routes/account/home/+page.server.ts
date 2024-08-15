@@ -4,7 +4,8 @@ import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ locals }) => {
 	if (locals.user?.role !== 'admin') {
-		throw redirect(302, '/login'); // Weiterleitung zur Login-Seite, wenn nicht authentifiziert oder nicht Admin
+		throw error(403, 'Forbidden'); // Weiterleitung zur Login-Seite, wenn nicht authentifiziert oder nicht Admin
+        //noch umändern in 403 Forbidden und kein redirect.
 	}
 	try {
 		const { rows } = await pool.query('SELECT id, username, email FROM users');
